@@ -1,0 +1,4 @@
+.error{
+    color: red;
+}
+.mostrar {padding: 10px; position: fixed; top: 2px; right: 20px; width: 150px; height: 40px; background-color: #669966; color: #fff !important; z-index: 99999; text-align: center; z-index:99998;};

@@ -1,0 +1,6 @@
+h4 {color: blue;}
+h5 {font-weight: bold;}
+label {margin-top: 10px;}
+.mostrar {margin-top: 50px; padding: 10px; position: fixed; top: 2px; right: 20px; width: 150px; height: 40px; background-color: #669966; color: #fff !important; z-index: 99999; text-align: center;};
+.quadro {border: 1px solid #a3a3a3; padding: 10px; margin-top: 10px; margin-bottom: 10px;}
+

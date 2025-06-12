@@ -1,0 +1,5 @@
+RewriteEngine On
+RewriteRule cadastramento/(.*)/$ cadastramento.php?ide=$1
+RewriteRule expositor-cadastro/(.*)/$ cadastro_expositor.php?ide=$1
+RewriteRule qr/(.*)/$ e.php?idce=$1
+RewriteRule sair-qr/(.*)/$ e.php?idce=$1&sair=1

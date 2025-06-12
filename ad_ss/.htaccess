@@ -1,0 +1,9 @@
+RewriteEngine On
+
+RewriteRule inicio/$ home.php
+RewriteRule cadastro/$ cadastro.php
+RewriteRule eventos/$ eventos.php
+RewriteRule eventos-cadastrados/(.*)/$ eventos_cadastrados.php?ide=$1
+RewriteRule eventos-expositores/(.*)/$ eventos_expositores.php?ide=$1
+
+RewriteRule sair/$ sair.php
