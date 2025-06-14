@@ -22,10 +22,11 @@ header ('Content-type: text/html; charset=ISO-8859-1');
 include("class.phpmailer.php");
 
 
-$conn = mysqli_connect('localhost','u139844934_usuexpo','U8279381kd@#','u139844934_bdexpo') or die ("Nao e possivel conectar a base de dados");
+
+$conn = mysqli_connect('localhost', 'root', 'root', 'u139844934_bdexpo');
 mysqli_set_charset( $conn  , "latin1" );
 
-$v_tit = 'Administração de Eventos';
+$v_tit = 'Administraï¿½ï¿½o de Eventos';
 
 $v_url = 'https://expoaltotiete.com.br/ad_ss';
 $v_url_site = 'https://expoaltotiete.com.br/';
@@ -81,7 +82,7 @@ function email($para_email, $para_nome, $assunto, $html) {
 	//$mail2->AddAddress('valdileibranco@gmail.com', 'Valdilei Branco');
 	$mail2->AddAddress($para_email, $para_nome);	
 	$mail2->Subject = $assunto;
-	$mail2->AltBody = "Para ver essa mensagem, use um programa compatível com HTML!"; // optional, comment out and test
+	$mail2->AltBody = "Para ver essa mensagem, use um programa compatï¿½vel com HTML!"; // optional, comment out and test
 	$mail2->MsgHTML($html);
 	if ($mail2->Send()) {
 		return 1;
@@ -91,7 +92,7 @@ function email($para_email, $para_nome, $assunto, $html) {
 }
 
 function tirarAcentos($string){
-    return preg_replace(array("/(á|à|ã|â|ä)/","/(Á|À|Ã|Â|Ä)/","/(é|è|ê|ë)/","/(É|È|Ê|Ë)/","/(í|ì|î|ï)/","/(Í|Ì|Î|Ï)/","/(ó|ò|õ|ô|ö)/","/(Ó|Ò|Õ|Ô|Ö)/","/(ú|ù|û|ü)/","/(Ú|Ù|Û|Ü)/","/(ñ)/","/(Ñ)/"),explode(" ","a A e E i I o O u U n N"),$string);
+    return preg_replace(array("/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½|ï¿½|ï¿½|ï¿½)/","/(ï¿½)/","/(ï¿½)/"),explode(" ","a A e E i I o O u U n N"),$string);
 }
 
 function is_utf8($string) {
@@ -113,7 +114,7 @@ function slug($string, $slug = "-") {
     //Setamos o localidade
     setlocale(LC_ALL, 'pt_BR');
  
-    //Verificamos se a string é UTF-8
+    //Verificamos se a string ï¿½ UTF-8
     if (is_utf8($string))
         $string = utf8_decode($string);
  
@@ -121,14 +122,14 @@ function slug($string, $slug = "-") {
     if ($slug)
         $string = strtolower($string);
  
-    // Código ASCII das vogais
+    // Cï¿½digo ASCII das vogais
     $ascii['a'] = range(224, 230);
     $ascii['e'] = range(232, 235);
     $ascii['i'] = range(236, 239);
     $ascii['o'] = array_merge(range(242, 246), array(240, 248));
     $ascii['u'] = range(249, 252);
  
-    // Código ASCII dos outros caracteres
+    // Cï¿½digo ASCII dos outros caracteres
     $ascii['b'] = array(223);
     $ascii['c'] = array(231);
     $ascii['d'] = array(208);
@@ -150,7 +151,7 @@ function slug($string, $slug = "-") {
         //Se a flag 'slug' for verdadeira...
     if ($slug) {
  
-        //Troca tudo que não for letra ou número por um caractere ($slug)
+        //Troca tudo que nï¿½o for letra ou nï¿½mero por um caractere ($slug)
         $string = preg_replace('/[^a-z0-9]/i', $slug, $string);
  
         //Tira os caracteres ($slug) repetidos
